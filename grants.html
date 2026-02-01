@@ -144,293 +144,105 @@
                     <span class="material-symbols-outlined text-primary"
                       >calculate</span
                     >
-                    Grant & Affordability Calculator
+                    Grant Eligibility Estimator
                   </h3>
 
-                  <div class="space-y-5">
-                    <!-- Child Age -->
+                  <div class="space-y-6" id="hcSimpleCalc">
                     <div>
-                      <label
-                        class="block text-sm font-medium mb-2 opacity-80"
-                        for="childAge"
+                      <label class="block text-sm font-medium mb-2 opacity-80"
                         >Child's Age</label
                       >
                       <select
-                        id="childAge"
+                        id="hcAge"
                         class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
                       >
-                        <option value="under2">Under 2 years</option>
-                        <option value="age2">2 years old</option>
-                        <option value="age3to5">3 - 5 years old</option>
-                        <option value="age5plus">5 years or older</option>
+                        <option value="9m_1y">9 months to 1 year</option>
+                        <option value="2_3">2 - 3</option>
+                        <option value="3_4">3 - 4</option>
+                        <option value="5p">5+</option>
                       </select>
-                      <p class="text-[11px] mt-2 opacity-60 leading-tight">
-                        Free-hours schemes typically apply to ages 9 months to 4
-                        years for working parents, and 3–4 universal hours
-                        (England rules).
-                      </p>
                     </div>
 
-                    <!-- Employment Status -->
                     <div>
-                      <label
-                        class="block text-sm font-medium mb-2 opacity-80"
-                        for="employmentStatus"
+                      <label class="block text-sm font-medium mb-2 opacity-80"
                         >Employment Status</label
                       >
                       <select
-                        id="employmentStatus"
+                        id="hcEmp"
                         class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
                       >
                         <option value="unemployed">Unemployed</option>
-                        <option value="singleWorking">
-                          Secured Job or Working (Single parent)
+                        <option value="single_employed">
+                          Single Parent Employed
                         </option>
-                        <option value="bothWorking">
-                          Working (Both Parents)
+                        <option value="one_parent_employed">
+                          One Parent in Couple Employed
                         </option>
-                        <option value="fullTimeStudent">
-                          Full Time Student
+                        <option value="both_working">
+                          Both Parents Working
                         </option>
+                        <option value="student">Student</option>
                       </select>
-                      <p class="text-[11px] mt-2 opacity-60 leading-tight">
-                        UC childcare help usually requires you (and partner if
-                        applicable) to be in paid work; student childcare grant
-                        is for eligible full-time students.
-                      </p>
                     </div>
 
-                    <!-- Number of Children -->
                     <div>
-                      <label
-                        class="block text-sm font-medium mb-2 opacity-80"
-                        for="numChildren"
+                      <label class="block text-sm font-medium mb-2 opacity-80"
                         >Number of Children</label
                       >
                       <select
-                        id="numChildren"
+                        id="hcKids"
                         class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
                       >
                         <option value="1">1</option>
-                        <option value="2plus">2 or More</option>
+                        <option value="2">2 or more</option>
                       </select>
-                      <p class="text-[11px] mt-2 opacity-60 leading-tight">
-                        For “2 or more”, this calculator assumes
-                        <strong>2 children</strong> for costing (you can adjust
-                        later in code).
+                    </div>
+
+                    <div
+                      class="p-4 bg-primary/5 rounded-xl border border-primary/20"
+                    >
+                      <p class="text-sm font-semibold text-primary mb-1">
+                        Hours you can claim (estimate)
+                      </p>
+                      <p class="text-2xl font-bold" id="hcHoursOut">—</p>
+                      <p
+                        class="text-[11px] mt-2 opacity-60 leading-tight"
+                        id="hcHoursNote"
+                      >
+                        —
                       </p>
                     </div>
 
-                    <!-- Care Type + Rate -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label
-                          class="block text-sm font-medium mb-2 opacity-80"
-                          for="careType"
-                          >Care Type</label
-                        >
-                        <select
-                          id="careType"
-                          class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
-                        >
-                          <option value="childminder">
-                            Childminder (Ofsted registered)
-                          </option>
-                          <option value="nanny">
-                            Nanny (Ofsted registered)
-                          </option>
-                        </select>
-                      </div>
-                      <div>
-                        <label
-                          class="block text-sm font-medium mb-2 opacity-80"
-                          for="hourlyRate"
-                          >Hourly Rate (£)</label
-                        >
-                        <input
-                          id="hourlyRate"
-                          type="number"
-                          min="1"
-                          step="0.5"
-                          value="12"
-                          class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
-                          placeholder="e.g. 10, 12.5, 18"
-                        />
-                        <p class="text-[11px] mt-2 opacity-60 leading-tight">
-                          Use your local market rate. Defaults change when you
-                          switch care type.
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Hours per week -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label
-                          class="block text-sm font-medium mb-2 opacity-80"
-                          for="hoursPerWeek"
-                          >Hours Needed per Week</label
-                        >
-                        <input
-                          id="hoursPerWeek"
-                          type="number"
-                          min="1"
-                          step="1"
-                          value="30"
-                          class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
-                          placeholder="e.g. 20, 30, 40"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          class="block text-sm font-medium mb-2 opacity-80"
-                          for="termTimeOnly"
-                          >Schedule</label
-                        >
-                        <select
-                          id="termTimeOnly"
-                          class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
-                        >
-                          <option value="term">
-                            Term-time (38 weeks) assumption for free-hours
-                          </option>
-                          <option value="year">
-                            Year-round (52 weeks) assumption for free-hours
-                          </option>
-                        </select>
-                        <p class="text-[11px] mt-2 opacity-60 leading-tight">
-                          Free-hours are usually quoted as “per week for 38
-                          weeks”. Providers may stretch across the year.
-                        </p>
-                      </div>
+                    <div
+                      class="p-4 bg-primary/5 rounded-xl border border-primary/20"
+                    >
+                      <p class="text-sm font-semibold text-primary mb-1">
+                        Potential savings (estimate)
+                      </p>
+                      <p class="text-2xl font-bold" id="hcSavingsOut">—</p>
+                      <p
+                        class="text-[11px] mt-2 opacity-60 leading-tight"
+                        id="hcSavingsNote"
+                      >
+                        —
+                      </p>
                     </div>
 
                     <button
-                      id="calcBtn"
+                      id="hcCalcBtn"
                       class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:opacity-90 transition-all shadow-md"
+                      type="button"
                     >
                       Calculate
                     </button>
 
-                    <!-- Results -->
-                    <div id="results" class="space-y-4 hidden">
-                      <div
-                        class="p-4 bg-primary/5 rounded-xl border border-primary/20"
-                      >
-                        <p class="text-sm font-semibold text-primary mb-1">
-                          Summary
-                        </p>
-                        <p id="summaryLine" class="text-base font-medium"></p>
-                        <p
-                          id="notesLine"
-                          class="text-[11px] mt-2 opacity-60 leading-tight"
-                        ></p>
-                      </div>
-
-                      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div
-                          class="p-4 rounded-xl border border-[#f3e9e7] dark:border-[#3d2a26] bg-white dark:bg-[#2d1b17]"
-                        >
-                          <p class="text-xs opacity-70">
-                            Estimated Market Cost
-                          </p>
-                          <p id="marketCost" class="text-xl font-black mt-1">
-                            —
-                          </p>
-                          <p
-                            id="marketDetail"
-                            class="text-[11px] opacity-60 mt-2 leading-tight"
-                          >
-                            —
-                          </p>
-                        </div>
-
-                        <div
-                          class="p-4 rounded-xl border border-[#f3e9e7] dark:border-[#3d2a26] bg-white dark:bg-[#2d1b17]"
-                        >
-                          <p class="text-xs opacity-70">Potential Support</p>
-                          <p id="supportAmount" class="text-xl font-black mt-1">
-                            —
-                          </p>
-                          <p
-                            id="supportDetail"
-                            class="text-[11px] opacity-60 mt-2 leading-tight"
-                          >
-                            —
-                          </p>
-                        </div>
-
-                        <div
-                          class="p-4 rounded-xl border border-[#f3e9e7] dark:border-[#3d2a26] bg-white dark:bg-[#2d1b17]"
-                        >
-                          <p class="text-xs opacity-70">
-                            Estimated Out-of-Pocket
-                          </p>
-                          <p id="oopAmount" class="text-xl font-black mt-1">
-                            —
-                          </p>
-                          <p
-                            id="oopDetail"
-                            class="text-[11px] opacity-60 mt-2 leading-tight"
-                          >
-                            —
-                          </p>
-                        </div>
-                      </div>
-
-                      <div
-                        class="p-4 rounded-xl border border-[#f3e9e7] dark:border-[#3d2a26] bg-white dark:bg-[#2d1b17]"
-                      >
-                        <p class="text-sm font-semibold mb-2">
-                          Hours Coverage (at your chosen hourly rate)
-                        </p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                          <div
-                            class="rounded-lg bg-black/5 dark:bg-white/5 p-3"
-                          >
-                            <p class="text-[11px] opacity-70">
-                              Potential free hours/week
-                            </p>
-                            <p id="freeHours" class="text-lg font-bold">—</p>
-                          </div>
-                          <div
-                            class="rounded-lg bg-black/5 dark:bg-white/5 p-3"
-                          >
-                            <p class="text-[11px] opacity-70">
-                              Support-equivalent hours/month
-                            </p>
-                            <p id="supportHours" class="text-lg font-bold">—</p>
-                          </div>
-                          <div
-                            class="rounded-lg bg-black/5 dark:bg-white/5 p-3"
-                          >
-                            <p class="text-[11px] opacity-70">
-                              Paid hours you still fund/month
-                            </p>
-                            <p id="paidHours" class="text-lg font-bold">—</p>
-                          </div>
-                        </div>
-                        <p class="text-[11px] opacity-60 mt-3 leading-tight">
-                          These are estimates; some providers charge extras
-                          (meals, trips), and “free hours” may not cover
-                          everything.
-                        </p>
-                      </div>
-
-                      <div class="text-[11px] opacity-60 leading-relaxed">
-                        <strong>Rules used:</strong> UC childcare can pay back
-                        up to <strong>85%</strong> of registered childcare,
-                        capped at <strong>£1,031.88</strong> (1 child) or
-                        <strong>£1,768.94</strong> (2+ children) per assessment
-                        period/month. Student childcare grant can pay up to
-                        <strong>85%</strong>, capped at
-                        <strong>£199.62</strong> (1) or
-                        <strong>£342.24</strong> (2+) per week (2025–26).
-                        Free-hours estimates follow GOV.UK “working parents”
-                        scheme (30 hours/week for 38 weeks for eligible ages).
-                        Always verify for your case.
-                      </div>
-                    </div>
+                    <p class="text-[11px] opacity-60 leading-tight">
+                      Estimates assume Ofsted-registered childcare. UC childcare
+                      support and Student Childcare Grant typically cover up to
+                      85% of eligible costs (caps apply). Funded childcare hours
+                      are usually delivered term-time (38 weeks) and can be
+                      stretched by providers.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -700,289 +512,160 @@
   </body>
   <script>
     (function () {
-      // --- Constants from GOV.UK ---
-      // UC childcare caps per assessment period (monthly)
-      const UC_CAPS = {
-        one: 1031.88,
-        twoPlus: 1768.94,
-      };
+      // -----------------------------
+      // Adjustable assumptions (market-rate "value" for savings)
+      // -----------------------------
+      // Used ONLY to estimate "savings" in £ (since you removed cost inputs).
+      // Tweak as you like (e.g., nanny rates higher than childminder rates).
+      const MARKET_RATE_PER_HOUR_PER_CHILD = 8.5;
 
-      // Student Finance Childcare Grant caps per week (2025-2026)
-      const SFE_WEEKLY_CAPS = {
-        one: 199.62,
-        twoPlus: 342.24,
-      };
+      // Funded hours: usually term-time 38 weeks. Many providers offer "stretched" options.
+      const FUNDED_WEEKS_PER_YEAR = 38;
 
-      // Averages for conversion (weeks -> month)
-      const WEEKS_PER_MONTH = 4.3333333333;
+      // UC childcare: up to 85% of eligible costs, capped monthly.
+      // (Caps shown here are commonly cited; verify if you want to keep perfectly current.)
+      const UC_RATE = 0.85;
+      const UC_MONTHLY_CAP = { 1: 1031.88, 2: 1768.94 };
 
-      // Default hourly rates (editable assumptions)
-      const DEFAULT_RATES = {
-        childminder: 12, // placeholder default - adjust to your market
-        nanny: 18, // placeholder default - adjust to your market
-      };
+      // Student Finance Childcare Grant: up to 85% of eligible costs, capped weekly.
+      const SFE_RATE = 0.85;
+      const SFE_WEEKLY_CAP = { 1: 199.62, 2: 342.24 };
 
-      // Elements
-      const el = (id) => document.getElementById(id);
+      const WEEKS_PER_MONTH = 52 / 12;
 
-      const childAge = el("childAge");
-      const employmentStatus = el("employmentStatus");
-      const numChildren = el("numChildren");
-      const careType = el("careType");
-      const hourlyRate = el("hourlyRate");
-      const hoursPerWeek = el("hoursPerWeek");
-      const termTimeOnly = el("termTimeOnly");
-      const calcBtn = el("calcBtn");
+      const money = (n) =>
+        "£" +
+        (Math.max(0, n) || 0).toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        });
 
-      const results = el("results");
-      const summaryLine = el("summaryLine");
-      const notesLine = el("notesLine");
-      const marketCost = el("marketCost");
-      const marketDetail = el("marketDetail");
-      const supportAmount = el("supportAmount");
-      const supportDetail = el("supportDetail");
-      const oopAmount = el("oopAmount");
-      const oopDetail = el("oopDetail");
-      const freeHours = el("freeHours");
-      const supportHours = el("supportHours");
-      const paidHours = el("paidHours");
-
-      // Set default rate when switching care type
-      careType.addEventListener("change", () => {
-        const ct = careType.value;
-        const current = parseFloat(hourlyRate.value);
-        // Only auto-set if empty or equal to previous defaults (to avoid overwriting custom)
-        if (
-          !current ||
-          current === DEFAULT_RATES.childminder ||
-          current === DEFAULT_RATES.nanny
-        ) {
-          hourlyRate.value = DEFAULT_RATES[ct];
-        }
-      });
-
-      function pounds(n) {
-        return "£" + Math.max(0, n).toFixed(2);
+      function kidsKey(v) {
+        return v === "1" ? 1 : 2;
       }
 
-      function clamp(n, min, max) {
-        return Math.max(min, Math.min(max, n));
-      }
+      // -----------------------------
+      // Funded hours model (simplified, "potential" eligibility)
+      // Based only on your 3 fields; real eligibility can depend on income/immigration/benefits etc.
+      // -----------------------------
+      function fundedHoursPerWeek(age, employment) {
+        const isWorking =
+          employment === "single_employed" || employment === "both_working";
 
-      /**
-       * Estimate "potential free hours per week" (England-style assumptions):
-       * - Working parents: 30 hours/week for ages under2, age2, age3to5 (approx 9 months to 4 years; we map under2/2/3-5) over 38 weeks
-       * - Unemployed: 15 hours/week only for age2 (potentially, if on benefits & income threshold) and for age3to5 (universal for 3-4)
-       * - age5plus: 0 free hours
-       *
-       * NOTE: This is intentionally conservative and "potential" — real eligibility varies.
-       */
-      function estimateFreeHoursPerWeek(ageKey, statusKey) {
-        if (ageKey === "age5plus") return 0;
+        // 9m–1y: in reality, working parents can access funded hours (phased rollouts/criteria apply).
+        if (age === "9m_1y") return isWorking ? 30 : 0;
 
-        const working =
-          statusKey === "singleWorking" || statusKey === "bothWorking";
-        const student = statusKey === "fullTimeStudent";
-        const unemployed = statusKey === "unemployed";
-
-        // Working parents scheme (potential)
-        if (working) {
-          // Map under2, age2, age3to5 as potentially eligible for 30 hours (within 9m-4 framework)
-          if (ageKey === "under2" || ageKey === "age2" || ageKey === "age3to5")
-            return 30;
+        // 2–3: working parents often up to 30; unemployed may qualify for 15 if on qualifying benefits.
+        if (age === "2_3") {
+          if (isWorking) return 30;
+          if (employment === "unemployed") return 15; // "potential" (benefit-dependent)
+          return 0; // student/one-parent-employed kept conservative
         }
 
-        // Students: free-hours might still apply if working criteria met; we don't assume it by default.
-        if (student) {
-          // If child is 3-5 (includes 3-4), universal 15 hours might apply
-          if (ageKey === "age3to5") return 15;
-          // Some 2-year-olds get 15 hours with extra support, but we won't assume automatically
-          return 0;
+        // 3–4: commonly 15 universal; 30 for working parents.
+        if (age === "3_4") {
+          if (isWorking) return 30;
+          return 15;
         }
 
-        // Unemployed / extra support
-        if (unemployed) {
-          if (ageKey === "age3to5") return 15; // universal 3-4
-          if (ageKey === "age2") return 15; // potential if on UC and within income threshold
-          return 0;
-        }
-
+        // 5+: no funded childcare hours modelled (wraparound/holiday care only).
         return 0;
       }
 
-      /**
-       * Determine main support scheme used for the estimate (not combining):
-       * - Full time student -> Student Finance Childcare Grant (potential)
-       * - Working single/both -> Universal Credit childcare element (potential)
-       * - Unemployed -> none (0), because UC childcare element generally requires work
-       */
-      function determineSupportScheme(statusKey) {
-        if (statusKey === "fullTimeStudent") return "SFE";
-        if (statusKey === "singleWorking" || statusKey === "bothWorking")
+      // -----------------------------
+      // Choose which "support" to show as savings:
+      // - Student => Student Childcare Grant estimate
+      // - Working statuses => UC childcare estimate
+      // - Unemployed => funded hours value only (conservative)
+      // -----------------------------
+      function supportType(employment) {
+        if (employment === "student") return "SFE";
+        if (employment === "single_employed" || employment === "both_working")
           return "UC";
         return "NONE";
       }
 
+      // We need a baseline weekly childcare "cost" to estimate UC/SFE savings.
+      // Since we removed hours-needed input, we estimate against a common use case:
+      // Assume families need up to 30 hours/week paid childcare (typical working pattern),
+      // and funded hours reduce payable hours.
+      const ASSUMED_CARE_HOURS_NEEDED_PER_WEEK = 30;
+
       function calculate() {
-        // Inputs
-        const ageKey = childAge.value;
-        const statusKey = employmentStatus.value;
-        const childrenKey = numChildren.value;
-        const rate = parseFloat(hourlyRate.value);
-        const hrs = parseFloat(hoursPerWeek.value);
-        const scheduleKey = termTimeOnly.value;
+        const age = document.getElementById("hcAge").value;
+        const emp = document.getElementById("hcEmp").value;
+        const kids = kidsKey(document.getElementById("hcKids").value);
 
-        if (!rate || rate <= 0 || !hrs || hrs <= 0) {
-          results.classList.remove("hidden");
-          summaryLine.textContent =
-            "Please enter a valid hourly rate and hours per week.";
-          notesLine.textContent = "";
-          marketCost.textContent = "—";
-          supportAmount.textContent = "—";
-          oopAmount.textContent = "—";
-          freeHours.textContent = "—";
-          supportHours.textContent = "—";
-          paidHours.textContent = "—";
-          return;
-        }
-
-        // Children multiplier (for "2 or more", assume 2 children)
-        const childrenCount = childrenKey === "2plus" ? 2 : 1;
-
-        // Free hours/week estimate
-        const freeHrsPerWeek = estimateFreeHoursPerWeek(ageKey, statusKey);
-
-        // If free hours are term-time only, convert to monthly average
-        // term-time free hours: (freeHrsPerWeek * 38 weeks)/12 months => avg free hours per month
-        // year-round: assume free hours applied evenly each week (provider may stretch)
-        const freeHrsPerMonth =
-          scheduleKey === "term"
-            ? (freeHrsPerWeek * 38) / 12
-            : freeHrsPerWeek * WEEKS_PER_MONTH;
-
-        // Total hours needed per month
-        const totalHrsPerMonth = hrs * WEEKS_PER_MONTH;
-
-        // Free hours cannot exceed needed hours
-        const freeHrsAppliedPerMonth = clamp(
-          freeHrsPerMonth,
+        const funded = fundedHoursPerWeek(age, emp);
+        const payable = Math.max(
           0,
-          totalHrsPerMonth,
+          ASSUMED_CARE_HOURS_NEEDED_PER_WEEK - funded,
         );
 
-        // Market costs (gross)
-        const grossMonthlyCost = rate * totalHrsPerMonth * childrenCount;
+        // "Value" of funded hours (term-time)
+        const fundedValueAnnual =
+          funded *
+          FUNDED_WEEKS_PER_YEAR *
+          MARKET_RATE_PER_HOUR_PER_CHILD *
+          (kids === 1 ? 1 : 2);
 
-        // Cost after free-hours (we assume free hours offset at the same hourly rate)
-        const freeOffsetValue = rate * freeHrsAppliedPerMonth * childrenCount;
-        const netMonthlyCostAfterFree = Math.max(
-          0,
-          grossMonthlyCost - freeOffsetValue,
-        );
+        // Baseline gross costs (for estimating UC/SFE)
+        const grossWeekly =
+          payable * MARKET_RATE_PER_HOUR_PER_CHILD * (kids === 1 ? 1 : 2);
 
-        // Choose support scheme
-        const scheme = determineSupportScheme(statusKey);
+        const grossMonthly = grossWeekly * WEEKS_PER_MONTH;
 
+        const scheme = supportType(emp);
+
+        let supportWeekly = 0;
         let supportMonthly = 0;
-        let schemeLabel = "No grants assumed";
-        let schemeNote =
-          "Eligibility depends on your circumstances and scheme rules.";
+        let schemeLabel = "No UC/SFE support modelled";
 
         if (scheme === "UC") {
-          schemeLabel = "Universal Credit childcare element (potential)";
-          // UC: up to 85% of eligible paid childcare costs, capped monthly
-          const cap = childrenKey === "2plus" ? UC_CAPS.twoPlus : UC_CAPS.one;
-          supportMonthly = Math.min(netMonthlyCostAfterFree * 0.85, cap);
-          schemeNote = `UC can refund up to 85% of childcare, capped at ${pounds(cap)}/month (assessment period).`;
+          schemeLabel = "Universal Credit childcare element (estimate)";
+          supportMonthly = Math.min(
+            grossMonthly * UC_RATE,
+            UC_MONTHLY_CAP[kids],
+          );
+          supportWeekly = supportMonthly / WEEKS_PER_MONTH;
         } else if (scheme === "SFE") {
-          schemeLabel = "Student Finance Childcare Grant (potential)";
-          // Student grant: up to 85% capped weekly. Convert weekly cap to monthly.
-          const weeklyCap =
-            childrenKey === "2plus"
-              ? SFE_WEEKLY_CAPS.twoPlus
-              : SFE_WEEKLY_CAPS.one;
-          const monthlyCap = weeklyCap * WEEKS_PER_MONTH;
-          supportMonthly = Math.min(netMonthlyCostAfterFree * 0.85, monthlyCap);
-          schemeNote = `Student childcare grant can cover up to 85%, capped at ${pounds(weeklyCap)}/week (~${pounds(monthlyCap)}/month).`;
-        }
-
-        // Out of pocket
-        const outOfPocket = Math.max(
-          0,
-          netMonthlyCostAfterFree - supportMonthly,
-        );
-
-        // Hours equivalents
-        const supportHrsPerMonth = rate > 0 ? supportMonthly / rate : 0;
-        const paidHrsYouFund = rate > 0 ? outOfPocket / rate : 0;
-
-        // Build summary text
-        const ageText = childAge.options[childAge.selectedIndex].text;
-        const statusText =
-          employmentStatus.options[employmentStatus.selectedIndex].text;
-        const childText =
-          childrenKey === "2plus" ? "2 children (assumed)" : "1 child";
-
-        results.classList.remove("hidden");
-
-        summaryLine.textContent = `${ageText} • ${statusText} • ${childText} • ${hrs} hrs/week @ ${pounds(rate)}/hr`;
-
-        notesLine.textContent = `Includes potential free-hours estimate (${freeHrsPerWeek} hrs/week) and ${schemeLabel}. ${schemeNote}`;
-
-        marketCost.textContent = pounds(grossMonthlyCost);
-        marketDetail.textContent = `Gross monthly at market rates (≈ ${totalHrsPerMonth.toFixed(1)} hrs/month × ${childrenCount} child).`;
-
-        supportAmount.textContent = pounds(supportMonthly + freeOffsetValue);
-        supportDetail.textContent = `Total potential help = free-hours value ${pounds(freeOffsetValue)} + grant/benefit ${pounds(supportMonthly)}.`;
-
-        oopAmount.textContent = pounds(outOfPocket);
-        oopDetail.textContent = `After free-hours + estimated support (excludes provider extras like meals/trips).`;
-
-        freeHours.textContent = `${freeHrsPerWeek} hrs/week`;
-        supportHours.textContent = `${(supportHrsPerMonth * childrenCount).toFixed(1)} hrs/month (equivalent)`;
-        paidHours.textContent = `${(paidHrsYouFund * childrenCount).toFixed(1)} hrs/month`;
-
-        // Soft warnings for edge cases
-        const warnings = [];
-        if (scheme === "NONE") {
-          warnings.push(
-            "No UC/student support assumed for this employment status (you may still qualify in specific circumstances).",
+          schemeLabel = "Student Finance Childcare Grant (estimate)";
+          supportWeekly = Math.min(
+            grossWeekly * SFE_RATE,
+            SFE_WEEKLY_CAP[kids],
           );
+          supportMonthly = supportWeekly * WEEKS_PER_MONTH;
         }
-        if (ageKey === "age5plus") {
-          warnings.push(
-            "Free-hours typically do not apply for school-age children; after-school/club funding differs.",
-          );
-        }
-        if (childrenKey === "2plus") {
-          warnings.push(
-            "Costs assumed for 2 children; if you have 3+, adjust the multiplier in the script.",
-          );
-        }
-        if (warnings.length) {
-          notesLine.textContent += " " + warnings.join(" ");
-        }
+
+        // Total "savings" shown = funded hours value (annualised to monthly) + UC/SFE support
+        const fundedMonthlyValue = fundedValueAnnual / 12;
+        const totalMonthlySavings = fundedMonthlyValue + supportMonthly;
+
+        // Output: hours claimable
+        document.getElementById("hcHoursOut").textContent =
+          `${funded} funded hours/week (term-time estimate)`;
+        document.getElementById("hcHoursNote").textContent =
+          funded > 0
+            ? `≈ ${funded * FUNDED_WEEKS_PER_YEAR} funded hours/year (assuming ${FUNDED_WEEKS_PER_YEAR} weeks).`
+            : `No funded hours estimated for this selection (5+ typically wraparound/holiday care only).`;
+
+        // Output: savings
+        document.getElementById("hcSavingsOut").textContent =
+          `${money(totalMonthlySavings)} / month`;
+        document.getElementById("hcSavingsNote").textContent =
+          `Includes funded-hours value (${money(fundedMonthlyValue)}/mo) + ${schemeLabel} (${money(supportMonthly)}/mo). Assumes ${ASSUMED_CARE_HOURS_NEEDED_PER_WEEK} hrs/week needed and £${MARKET_RATE_PER_HOUR_PER_CHILD}/hr market rate.`;
       }
 
-      calcBtn.addEventListener("click", calculate);
+      // Wire up
+      const btn = document.getElementById("hcCalcBtn");
+      btn.addEventListener("click", calculate);
 
-      // Optional: auto-calc on change
-      [
-        childAge,
-        employmentStatus,
-        numChildren,
-        careType,
-        hourlyRate,
-        hoursPerWeek,
-        termTimeOnly,
-      ].forEach((x) =>
-        x.addEventListener("change", () => {
-          if (!results.classList.contains("hidden")) calculate();
-        }),
-      );
+      ["hcAge", "hcEmp", "hcKids"].forEach((id) => {
+        document.getElementById(id).addEventListener("change", calculate);
+      });
 
-      // Set initial default rate by care type
-      hourlyRate.value = DEFAULT_RATES[careType.value] || hourlyRate.value;
+      // First run
+      calculate();
     })();
   </script>
 </html>
