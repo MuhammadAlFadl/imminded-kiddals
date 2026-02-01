@@ -1,0 +1,506 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Why HeritageCare | Culturally-Focused Childcare</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ee4b2b",
+              terracotta: "#9a594c",
+              "beige-light": "#fcf9f8",
+              "beige-warm": "#f3e9e7",
+              "background-light": "#fdfaf9",
+              "background-dark": "#221310",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #ee4b2b 0%, #9a594c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#1b100d] dark:text-white transition-colors duration-300"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-beige-warm dark:border-[#3d2a26] px-10 py-4 max-w-[1200px] mx-auto w-full sticky top-0 bg-background-light/80 backdrop-blur-md z-50"
+        >
+          <a href="index.html" class="flex items-center gap-4">
+            <div class="size-8 text-primary">
+              <span class="material-symbols-outlined text-4xl">child_hat</span>
+            </div>
+            <span
+              class="text-[#1b100d] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]"
+            >
+              Im Minded
+            </span>
+          </a>
+
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="hidden md:flex items-center gap-9">
+              <a class="text-primary text-sm font-semibold" href="#"
+                >Why Im Minded</a
+              >
+              <a
+                class="text-[#1b100d] dark:text-white text-sm font-medium hover:text-primary transition-colors"
+                href="ourmindersnannies.html"
+                >Our Minders/Nannies</a
+              >
+              <a
+                class="text-[#1b100d] dark:text-white text-sm font-medium hover:text-primary transition-colors"
+                href="#"
+                >Grants</a
+              >
+            </div>
+            <button
+              class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-opacity"
+              onclick="window.location.href = 'index.html#register-interest'"
+            >
+              Join Waitlist
+            </button>
+          </div>
+        </header>
+        <main class="flex-1">
+          <section class="max-w-[1200px] mx-auto px-10 py-20 text-center">
+            <div class="max-w-3xl mx-auto">
+              <span
+                class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6 tracking-wide uppercase"
+                >The Im Minded Difference</span
+              >
+              <h1
+                class="text-[#1b100d] dark:text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] mb-8"
+              >
+                Preserving your <span class="text-gradient">roots</span>,
+                empowering their <span class="text-gradient">future</span>.
+              </h1>
+              <p
+                class="text-terracotta dark:text-gray-300 text-lg md:text-xl font-normal leading-relaxed mb-10"
+              >
+                We don't just provide childcare. We match families with expert
+                nanny-tutors who share their culture and prioritize academic
+                growth.
+              </p>
+            </div>
+          </section>
+          <section class="bg-beige-warm/30 dark:bg-[#1b100d] py-24">
+            <div class="max-w-[1200px] mx-auto px-10">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                  <div
+                    class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary text-white mb-6"
+                  >
+                    <span class="material-symbols-outlined">language</span>
+                  </div>
+                  <h2
+                    class="text-3xl font-black text-[#1b100d] dark:text-white mb-6"
+                  >
+                    Cultural Continuity
+                  </h2>
+                  <p
+                    class="text-terracotta dark:text-gray-400 text-lg leading-relaxed mb-6"
+                  >
+                    Maintaining your child's heritage shouldn't feel like a
+                    part-time job. Our caregivers integrate your native
+                    language, stories, and traditions into every interaction.
+                  </p>
+                  <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                      <span class="material-symbols-outlined text-primary mt-1"
+                        >check_circle</span
+                      >
+                      <span class="dark:text-gray-200"
+                        ><strong>Mother Tongue Immersion:</strong> Daily
+                        conversation in your family's language.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="material-symbols-outlined text-primary mt-1"
+                        >check_circle</span
+                      >
+                      <span class="dark:text-gray-200"
+                        ><strong>Culinary Connection:</strong> Familiar foods
+                        and mealtime traditions.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="material-symbols-outlined text-primary mt-1"
+                        >check_circle</span
+                      >
+                      <span class="dark:text-gray-200"
+                        ><strong>Festive Celebrations:</strong> Honoring your
+                        cultural holidays and values.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="order-1 lg:order-2">
+                  <div class="relative">
+                    <div
+                      class="absolute -top-4 -right-4 w-full h-full border-2 border-primary rounded-2xl"
+                    ></div>
+                    <div
+                      class="relative w-full aspect-video rounded-2xl bg-center bg-cover shadow-2xl overflow-hidden"
+                      style="background-image: url(&quot;img/capture.png&quot;)"
+                    >
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-24">
+            <div class="max-w-[1200px] mx-auto px-10">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                  <div class="relative">
+                    <div
+                      class="absolute -bottom-4 -left-4 w-full h-full border-2 border-terracotta/30 rounded-2xl"
+                    ></div>
+                    <div
+                      class="relative w-full aspect-video rounded-2xl bg-center bg-cover shadow-2xl overflow-hidden"
+                      style="
+                        background-image: url(&quot;img/Capture1.png&quot;);
+                      "
+                    >
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-terracotta text-white mb-6"
+                  >
+                    <span class="material-symbols-outlined">menu_book</span>
+                  </div>
+                  <h2
+                    class="text-3xl font-black text-[#1b100d] dark:text-white mb-6"
+                  >
+                    Holistic Tutoring
+                  </h2>
+                  <p
+                    class="text-terracotta dark:text-gray-400 text-lg leading-relaxed mb-6"
+                  >
+                    Learning happens everywhere, not just at a desk. Our nannies
+                    are trained educators who turn playtime into learning
+                    opportunities, focusing on cognitive and social development.
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div
+                      class="p-5 bg-beige-warm/40 dark:bg-[#2d1b17] rounded-xl border border-beige-warm dark:border-[#3d2a26]"
+                    >
+                      <h4 class="font-bold mb-2 dark:text-white">
+                        Active Curriculum
+                      </h4>
+                      <p class="text-sm text-terracotta dark:text-gray-400">
+                        Lessons woven into garden play, cooking, and daily
+                        routines.
+                      </p>
+                    </div>
+                    <div
+                      class="p-5 bg-beige-warm/40 dark:bg-[#2d1b17] rounded-xl border border-beige-warm dark:border-[#3d2a26]"
+                    >
+                      <h4 class="font-bold mb-2 dark:text-white">
+                        Homework Support
+                      </h4>
+                      <p class="text-sm text-terracotta dark:text-gray-400">
+                        Expert guidance for school tasks in a low-stress
+                        environment.
+                      </p>
+                    </div>
+                    <div
+                      class="p-5 bg-beige-warm/40 dark:bg-[#2d1b17] rounded-xl border border-beige-warm dark:border-[#3d2a26]"
+                    >
+                      <h4 class="font-bold mb-2 dark:text-white">
+                        Early Literacy
+                      </h4>
+                      <p class="text-sm text-terracotta dark:text-gray-400">
+                        Phonics and reading practice through storytelling and
+                        games.
+                      </p>
+                    </div>
+                    <div
+                      class="p-5 bg-beige-warm/40 dark:bg-[#2d1b17] rounded-xl border border-beige-warm dark:border-[#3d2a26]"
+                    >
+                      <h4 class="font-bold mb-2 dark:text-white">
+                        STEAM Focus
+                      </h4>
+                      <p class="text-sm text-terracotta dark:text-gray-400">
+                        Sparking curiosity with science experiments and art and
+                        math play.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="bg-primary/5 dark:bg-[#1b100d] py-24">
+            <div class="max-w-[1200px] mx-auto px-10">
+              <div class="text-center mb-16">
+                <div
+                  class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white dark:bg-[#2d1b17] text-primary shadow-md mb-6"
+                >
+                  <span class="material-symbols-outlined">verified_user</span>
+                </div>
+                <h2
+                  class="text-3xl font-black text-[#1b100d] dark:text-white mb-4"
+                >
+                  Safety &amp; Trust First
+                </h2>
+                <p class="text-terracotta dark:text-gray-400 max-w-2xl mx-auto">
+                  We verify before listing also, so you have additional support.
+                </p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                  class="bg-white dark:bg-[#2d1b17] p-8 rounded-2xl shadow-sm border border-beige-warm dark:border-[#3d2a26] text-center"
+                >
+                  <div
+                    class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center text-green-600 mx-auto mb-6"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >verified</span
+                    >
+                  </div>
+                  <h3 class="text-xl font-bold mb-3 dark:text-white">
+                    Ofsted Registered
+                  </h3>
+                  <p class="text-terracotta dark:text-gray-400 text-sm">
+                    Every Im Minded provider is fully registered, ensuring high
+                    standards of educational quality and safety.
+                  </p>
+                </div>
+                <div
+                  class="bg-white dark:bg-[#2d1b17] p-8 rounded-2xl shadow-sm border border-beige-warm dark:border-[#3d2a26] text-center"
+                >
+                  <div
+                    class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >gavel</span
+                    >
+                  </div>
+                  <h3 class="text-xl font-bold mb-3 dark:text-white">
+                    Enhanced DBS
+                  </h3>
+                  <p class="text-terracotta dark:text-gray-400 text-sm">
+                    Rigorous background checks (Enhanced DBS) are mandatory for
+                    all our staff members without exception.
+                  </p>
+                </div>
+                <div
+                  class="bg-white dark:bg-[#2d1b17] p-8 rounded-2xl shadow-sm border border-beige-warm dark:border-[#3d2a26] text-center"
+                >
+                  <div
+                    class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center text-red-600 mx-auto mb-6"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >health_and_safety</span
+                    >
+                  </div>
+                  <h3 class="text-xl font-bold mb-3 dark:text-white">
+                    First Aid Certified
+                  </h3>
+                  <p class="text-terracotta dark:text-gray-400 text-sm">
+                    Complete pediatric first aid certification is renewed
+                    annually by all our nanny-tutors.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="mt-20 flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-500"
+              >
+                <div class="flex items-center gap-2 font-bold text-lg">
+                  <span class="material-symbols-outlined">policy</span> OFSTED
+                  Standard
+                </div>
+                <div class="flex items-center gap-2 font-bold text-lg">
+                  <span class="material-symbols-outlined">encrypted</span> DBS
+                  Secured
+                </div>
+                <div class="flex items-center gap-2 font-bold text-lg">
+                  <span class="material-symbols-outlined">handshake</span>
+                  Continuous Support
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-24 max-w-[1200px] mx-auto px-10">
+            <div
+              class="bg-terracotta text-white rounded-[2.5rem] p-12 lg:p-20 text-center relative overflow-hidden shadow-2xl"
+            >
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"
+              ></div>
+              <h2 class="text-3xl md:text-5xl font-black mb-8 relative z-10">
+                Ready to find your perfect match?
+              </h2>
+              <p
+                class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 relative z-10"
+              >
+                Register your interest today to be connected with expert
+                caregivers who align with your family's culture, values, and
+                goals.
+              </p>
+              <div
+                class="flex flex-col sm:flex-row gap-4 justify-center relative z-10"
+              >
+                <button
+                  class="px-10 py-5 bg-white text-terracotta font-black rounded-xl hover:shadow-xl transition-all scale-100 hover:scale-105"
+                  onclick="
+                    window.location.href = 'index.html#register-interest'
+                  "
+                >
+                  Join the Waitlist
+                </button>
+                <button
+                  class="px-10 py-5 bg-transparent border-2 border-white/30 text-white font-bold rounded-xl hover:bg-white/10 transition-all"
+                >
+                  View Pricing &amp; Grants
+                </button>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer
+          class="border-t border-beige-warm dark:border-[#3d2a26] bg-beige-light dark:bg-[#221310] py-16"
+        >
+          <div class="max-w-[1200px] mx-auto px-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+              <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-4 mb-6">
+                  <span class="material-symbols-outlined text-4xl text-primary"
+                    >child_hat</span
+                  >
+                  <span class="text-2xl font-black dark:text-white"
+                    >Im Minded</span
+                  >
+                </div>
+                <p class="text-terracotta dark:text-gray-400 max-w-xs mb-8">
+                  Modern childcare rooted in culture and excellence. Helping the
+                  next generation lead with identity and knowledge.
+                </p>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#1b100d] dark:text-white mb-6">
+                  Platform
+                </h4>
+                <ul
+                  class="space-y-4 text-sm text-terracotta dark:text-gray-400"
+                >
+                  <li>
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >Why Im Minded</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="hover:text-primary transition-colors"
+                      href="ourmindersnannies.html"
+                      >Our Minders/Nannies</a
+                    >
+                  </li>
+
+                  <li>
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >Grant Calculator</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#1b100d] dark:text-white mb-6">
+                  Support
+                </h4>
+                <ul
+                  class="space-y-4 text-sm text-terracotta dark:text-gray-400"
+                >
+                  <li>
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >Privacy Policy</a
+                    >
+                  </li>
+                  <li>
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >Terms of Service</a
+                    >
+                  </li>
+                  <li>
+                    <a class="hover:text-primary transition-colors" href="#"
+                      >FAQ</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="mt-16 pt-8 border-t border-beige-warm dark:border-[#3d2a26] flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-terracotta/60 dark:text-gray-500"
+            >
+              <p>© 2024 Im Minded. All rights reserved.</p>
+              <div class="flex gap-6">
+                <a class="hover:text-primary" href="#">Twitter</a>
+                <a class="hover:text-primary" href="#">Instagram</a>
+                <a class="hover:text-primary" href="#">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
