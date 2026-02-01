@@ -1,0 +1,988 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Grants &amp; Affordability | HeritageCare</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ee4b2b",
+              "background-light": "#fcf9f8",
+              "background-dark": "#221310",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .calculator-card {
+        background: linear-gradient(145deg, #ffffff, #fcf9f8);
+      }
+      .dark .calculator-card {
+        background: linear-gradient(145deg, #2d1b17, #1b100d);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#1b100d] dark:text-white transition-colors duration-300"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f3e9e7] dark:border-[#3d2a26] px-10 py-4 max-w-[1200px] mx-auto w-full"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <span class="material-symbols-outlined text-4xl text-primary"
+              >child_hat</span
+            >
+            <span class="text-2xl font-black dark:text-white">Im Minded</span>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="hidden md:flex items-center gap-9">
+              <a
+                class="text-[#1b100d] dark:text-white text-sm font-medium hover:text-primary transition-colors"
+                href="why.html"
+                >Why Im Minded</a
+              >
+              <a
+                class="text-[#1b100d] dark:text-white text-sm font-medium hover:text-primary transition-colors"
+                href="ourmindersnannies.html"
+                >Our Minders/Nannies</a
+              >
+              <a
+                class="text-primary text-sm font-bold border-b-2 border-primary"
+                href="grants.html"
+                >Grants</a
+              >
+            </div>
+            <button
+              class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-opacity shadow-sm"
+            >
+              Join Waitlist
+            </button>
+          </div>
+        </header>
+        <main class="flex-1">
+          <section class="max-w-[1200px] mx-auto px-10 pt-16 pb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span
+                  class="inline-block px-4 py-1.5 mb-6 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full"
+                  >Financial Support</span
+                >
+                <h1
+                  class="text-[#1b100d] dark:text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] mb-6"
+                >
+                  Government Grants &amp;
+                  <span class="text-primary">Funding</span>
+                </h1>
+                <p
+                  class="text-[#1b100d] dark:text-gray-300 text-lg md:text-xl font-normal leading-relaxed opacity-90 mb-8"
+                >
+                  Exceptional, culturally-focused childcare should be accessible
+                  to every family. HeritageCare is fully compatible with UK
+                  government schemes, helping you save thousands on expert care.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                  <div
+                    class="flex items-center gap-2 bg-white dark:bg-[#2d1b17] border border-[#f3e9e7] dark:border-[#3d2a26] px-4 py-2 rounded-lg shadow-sm"
+                  >
+                    <span class="material-symbols-outlined text-green-600"
+                      >verified</span
+                    >
+                    <span class="text-sm font-medium">Ofsted Registered</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-white dark:bg-[#2d1b17] border border-[#f3e9e7] dark:border-[#3d2a26] px-4 py-2 rounded-lg shadow-sm"
+                  >
+                    <span class="material-symbols-outlined text-green-600"
+                      >verified</span
+                    >
+                    <span class="text-sm font-medium">Tax-Free Approved</span>
+                  </div>
+                </div>
+              </div>
+              <div class="relative">
+                <div
+                  class="calculator-card p-8 rounded-2xl shadow-xl border border-[#f3e9e7] dark:border-[#3d2a26]"
+                >
+                  <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary"
+                      >calculate</span
+                    >
+                    Grant & Affordability Calculator
+                  </h3>
+
+                  <div class="space-y-5">
+                    <!-- Child Age -->
+                    <div>
+                      <label
+                        class="block text-sm font-medium mb-2 opacity-80"
+                        for="childAge"
+                        >Child's Age</label
+                      >
+                      <select
+                        id="childAge"
+                        class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
+                      >
+                        <option value="under2">Under 2 years</option>
+                        <option value="age2">2 years old</option>
+                        <option value="age3to5">3 - 5 years old</option>
+                        <option value="age5plus">5 years or older</option>
+                      </select>
+                      <p class="text-[11px] mt-2 opacity-60 leading-tight">
+                        Free-hours schemes typically apply to ages 9 months to 4
+                        years for working parents, and 3–4 universal hours
+                        (England rules).
+                      </p>
+                    </div>
+
+                    <!-- Employment Status -->
+                    <div>
+                      <label
+                        class="block text-sm font-medium mb-2 opacity-80"
+                        for="employmentStatus"
+                        >Employment Status</label
+                      >
+                      <select
+                        id="employmentStatus"
+                        class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
+                      >
+                        <option value="unemployed">Unemployed</option>
+                        <option value="singleWorking">
+                          Secured Job or Working (Single parent)
+                        </option>
+                        <option value="bothWorking">
+                          Working (Both Parents)
+                        </option>
+                        <option value="fullTimeStudent">
+                          Full Time Student
+                        </option>
+                      </select>
+                      <p class="text-[11px] mt-2 opacity-60 leading-tight">
+                        UC childcare help usually requires you (and partner if
+                        applicable) to be in paid work; student childcare grant
+                        is for eligible full-time students.
+                      </p>
+                    </div>
+
+                    <!-- Number of Children -->
+                    <div>
+                      <label
+                        class="block text-sm font-medium mb-2 opacity-80"
+                        for="numChildren"
+                        >Number of Children</label
+                      >
+                      <select
+                        id="numChildren"
+                        class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
+                      >
+                        <option value="1">1</option>
+                        <option value="2plus">2 or More</option>
+                      </select>
+                      <p class="text-[11px] mt-2 opacity-60 leading-tight">
+                        For “2 or more”, this calculator assumes
+                        <strong>2 children</strong> for costing (you can adjust
+                        later in code).
+                      </p>
+                    </div>
+
+                    <!-- Care Type + Rate -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          class="block text-sm font-medium mb-2 opacity-80"
+                          for="careType"
+                          >Care Type</label
+                        >
+                        <select
+                          id="careType"
+                          class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
+                        >
+                          <option value="childminder">
+                            Childminder (Ofsted registered)
+                          </option>
+                          <option value="nanny">
+                            Nanny (Ofsted registered)
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <label
+                          class="block text-sm font-medium mb-2 opacity-80"
+                          for="hourlyRate"
+                          >Hourly Rate (£)</label
+                        >
+                        <input
+                          id="hourlyRate"
+                          type="number"
+                          min="1"
+                          step="0.5"
+                          value="12"
+                          class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
+                          placeholder="e.g. 10, 12.5, 18"
+                        />
+                        <p class="text-[11px] mt-2 opacity-60 leading-tight">
+                          Use your local market rate. Defaults change when you
+                          switch care type.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Hours per week -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          class="block text-sm font-medium mb-2 opacity-80"
+                          for="hoursPerWeek"
+                          >Hours Needed per Week</label
+                        >
+                        <input
+                          id="hoursPerWeek"
+                          type="number"
+                          min="1"
+                          step="1"
+                          value="30"
+                          class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
+                          placeholder="e.g. 20, 30, 40"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          class="block text-sm font-medium mb-2 opacity-80"
+                          for="termTimeOnly"
+                          >Schedule</label
+                        >
+                        <select
+                          id="termTimeOnly"
+                          class="w-full h-12 rounded-xl border-[#e7d3cf] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#1b100d] focus:ring-primary"
+                        >
+                          <option value="term">
+                            Term-time (38 weeks) assumption for free-hours
+                          </option>
+                          <option value="year">
+                            Year-round (52 weeks) assumption for free-hours
+                          </option>
+                        </select>
+                        <p class="text-[11px] mt-2 opacity-60 leading-tight">
+                          Free-hours are usually quoted as “per week for 38
+                          weeks”. Providers may stretch across the year.
+                        </p>
+                      </div>
+                    </div>
+
+                    <button
+                      id="calcBtn"
+                      class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:opacity-90 transition-all shadow-md"
+                    >
+                      Calculate
+                    </button>
+
+                    <!-- Results -->
+                    <div id="results" class="space-y-4 hidden">
+                      <div
+                        class="p-4 bg-primary/5 rounded-xl border border-primary/20"
+                      >
+                        <p class="text-sm font-semibold text-primary mb-1">
+                          Summary
+                        </p>
+                        <p id="summaryLine" class="text-base font-medium"></p>
+                        <p
+                          id="notesLine"
+                          class="text-[11px] mt-2 opacity-60 leading-tight"
+                        ></p>
+                      </div>
+
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div
+                          class="p-4 rounded-xl border border-[#f3e9e7] dark:border-[#3d2a26] bg-white dark:bg-[#2d1b17]"
+                        >
+                          <p class="text-xs opacity-70">
+                            Estimated Market Cost
+                          </p>
+                          <p id="marketCost" class="text-xl font-black mt-1">
+                            —
+                          </p>
+                          <p
+                            id="marketDetail"
+                            class="text-[11px] opacity-60 mt-2 leading-tight"
+                          >
+                            —
+                          </p>
+                        </div>
+
+                        <div
+                          class="p-4 rounded-xl border border-[#f3e9e7] dark:border-[#3d2a26] bg-white dark:bg-[#2d1b17]"
+                        >
+                          <p class="text-xs opacity-70">Potential Support</p>
+                          <p id="supportAmount" class="text-xl font-black mt-1">
+                            —
+                          </p>
+                          <p
+                            id="supportDetail"
+                            class="text-[11px] opacity-60 mt-2 leading-tight"
+                          >
+                            —
+                          </p>
+                        </div>
+
+                        <div
+                          class="p-4 rounded-xl border border-[#f3e9e7] dark:border-[#3d2a26] bg-white dark:bg-[#2d1b17]"
+                        >
+                          <p class="text-xs opacity-70">
+                            Estimated Out-of-Pocket
+                          </p>
+                          <p id="oopAmount" class="text-xl font-black mt-1">
+                            —
+                          </p>
+                          <p
+                            id="oopDetail"
+                            class="text-[11px] opacity-60 mt-2 leading-tight"
+                          >
+                            —
+                          </p>
+                        </div>
+                      </div>
+
+                      <div
+                        class="p-4 rounded-xl border border-[#f3e9e7] dark:border-[#3d2a26] bg-white dark:bg-[#2d1b17]"
+                      >
+                        <p class="text-sm font-semibold mb-2">
+                          Hours Coverage (at your chosen hourly rate)
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                          <div
+                            class="rounded-lg bg-black/5 dark:bg-white/5 p-3"
+                          >
+                            <p class="text-[11px] opacity-70">
+                              Potential free hours/week
+                            </p>
+                            <p id="freeHours" class="text-lg font-bold">—</p>
+                          </div>
+                          <div
+                            class="rounded-lg bg-black/5 dark:bg-white/5 p-3"
+                          >
+                            <p class="text-[11px] opacity-70">
+                              Support-equivalent hours/month
+                            </p>
+                            <p id="supportHours" class="text-lg font-bold">—</p>
+                          </div>
+                          <div
+                            class="rounded-lg bg-black/5 dark:bg-white/5 p-3"
+                          >
+                            <p class="text-[11px] opacity-70">
+                              Paid hours you still fund/month
+                            </p>
+                            <p id="paidHours" class="text-lg font-bold">—</p>
+                          </div>
+                        </div>
+                        <p class="text-[11px] opacity-60 mt-3 leading-tight">
+                          These are estimates; some providers charge extras
+                          (meals, trips), and “free hours” may not cover
+                          everything.
+                        </p>
+                      </div>
+
+                      <div class="text-[11px] opacity-60 leading-relaxed">
+                        <strong>Rules used:</strong> UC childcare can pay back
+                        up to <strong>85%</strong> of registered childcare,
+                        capped at <strong>£1,031.88</strong> (1 child) or
+                        <strong>£1,768.94</strong> (2+ children) per assessment
+                        period/month. Student childcare grant can pay up to
+                        <strong>85%</strong>, capped at
+                        <strong>£199.62</strong> (1) or
+                        <strong>£342.24</strong> (2+) per week (2025–26).
+                        Free-hours estimates follow GOV.UK “working parents”
+                        scheme (30 hours/week for 38 weeks for eligible ages).
+                        Always verify for your case.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="bg-primary/5 dark:bg-[#1b100d] py-20">
+            <div class="max-w-[1200px] mx-auto px-10">
+              <div class="text-center mb-16">
+                <h2
+                  class="text-3xl md:text-4xl font-bold text-[#1b100d] dark:text-white mb-4"
+                >
+                  Available Funding Schemes
+                </h2>
+                <p class="text-[#9a594c] dark:text-gray-400 max-w-2xl mx-auto">
+                  We support all major UK government childcare grants to ensure
+                  you get the maximum financial assistance possible.
+                </p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                  class="bg-white dark:bg-[#2d1b17] p-8 rounded-2xl shadow-sm border border-[#f3e9e7] dark:border-[#3d2a26] flex flex-col h-full"
+                >
+                  <div
+                    class="w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >account_balance_wallet</span
+                    >
+                  </div>
+                  <h3 class="text-2xl font-bold mb-4 dark:text-white">
+                    Tax-Free Childcare
+                  </h3>
+                  <p class="text-[#9a594c] dark:text-gray-400 mb-6 flex-grow">
+                    For every £8 you pay in, the government will add £2, up to a
+                    maximum of £2,000 per child per year (or £4,000 if your
+                    child is disabled).
+                  </p>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2 text-sm">
+                      <span
+                        class="material-symbols-outlined text-primary text-sm"
+                        >check_circle</span
+                      >
+                      Available for children up to age 11
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                      <span
+                        class="material-symbols-outlined text-primary text-sm"
+                        >check_circle</span
+                      >
+                      Direct payment via government portal
+                    </li>
+                  </ul>
+                  <a
+                    class="text-primary font-bold inline-flex items-center gap-2 hover:underline"
+                    href="#"
+                  >
+                    Learn more
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div>
+                <div
+                  class="bg-white dark:bg-[#2d1b17] p-8 rounded-2xl shadow-sm border border-[#f3e9e7] dark:border-[#3d2a26] flex flex-col h-full"
+                >
+                  <div
+                    class="w-14 h-14 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >schedule</span
+                    >
+                  </div>
+                  <h3 class="text-2xl font-bold mb-4 dark:text-white">
+                    15 &amp; 30 Free Hours
+                  </h3>
+                  <p class="text-[#9a594c] dark:text-gray-400 mb-6 flex-grow">
+                    Eligible working parents of 2, 3 and 4-year-olds can access
+                    up to 30 hours of free childcare per week during term time
+                    (38 weeks a year).
+                  </p>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2 text-sm">
+                      <span
+                        class="material-symbols-outlined text-primary text-sm"
+                        >check_circle</span
+                      >
+                      Universal 15 hours for all 3-4 year olds
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                      <span
+                        class="material-symbols-outlined text-primary text-sm"
+                        >check_circle</span
+                      >
+                      30 hours for working families
+                    </li>
+                  </ul>
+                  <a
+                    class="text-primary font-bold inline-flex items-center gap-2 hover:underline"
+                    href="#"
+                  >
+                    Check Eligibility
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="max-w-[1200px] mx-auto px-10 py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+              <div class="lg:col-span-5">
+                <h2 class="text-3xl font-bold mb-6">
+                  How to apply with HeritageCare
+                </h2>
+                <p
+                  class="text-[#9a594c] dark:text-gray-400 mb-8 leading-relaxed"
+                >
+                  We've streamlined the process to make using your grants as
+                  simple as possible. Our dedicated support team is available to
+                  help you through every step of the application.
+                </p>
+                <div class="space-y-8">
+                  <div class="flex gap-4">
+                    <div
+                      class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold"
+                    >
+                      1
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg mb-1">Check Eligibility</h4>
+                      <p class="text-sm opacity-70">
+                        Use our calculator or the GOV.UK portal to see which
+                        grants apply to your family.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4">
+                    <div
+                      class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold"
+                    >
+                      2
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg mb-1">
+                        Register with HeritageCare
+                      </h4>
+                      <p class="text-sm opacity-70">
+                        Join our platform and select an Ofsted-registered
+                        nanny-tutor that fits your heritage needs.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4">
+                    <div
+                      class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold"
+                    >
+                      3
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg mb-1">Automatic Offsets</h4>
+                      <p class="text-sm opacity-70">
+                        We handle the billing integration. Your grants are
+                        applied directly to your monthly invoice.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-7">
+                <div
+                  class="rounded-2xl overflow-hidden shadow-2xl bg-gray-200 aspect-video relative group"
+                >
+                  <img
+                    alt="Mother working on laptop with child playing nearby"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNN6LS_NxQREWIyhf5kWVbeXNsgkwtvFLY5I58Q601m8nn0dkUmgOGAc3wCCTyIenwooD_0hIiZDatEqG5Ur9ZLJjJERKe_3fJ-ZG5BrbEBYcOY0y79-hbFjmKWZwVwzvw5_jn-mHDzEF41IXErTMDuwtbf54fXkWcawJkXdS50jSRsqh8SYsnkqDY87y5srYJQjtbO4e-jVzlOqCcjhqtp3YdgptviemJ_SzdJRJe1PXrJAvsBbWLQPcVfAeCmet6zWmkmtS9j_g"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#221310]/80 to-transparent flex items-end p-8"
+                  >
+                    <div class="text-white">
+                      <p class="text-lg font-medium italic">
+                        "The grant support team at HeritageCare helped us save
+                        over £150 a month. It made the decision to choose a
+                        specialized tutor so much easier."
+                      </p>
+                      <p class="mt-4 font-bold">— Sarah T., North London</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="max-w-[1200px] mx-auto px-10 pb-24">
+            <div class="bg-primary rounded-3xl p-12 text-center text-white">
+              <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Ready to secure your funding?
+              </h2>
+              <p class="text-white/80 max-w-xl mx-auto mb-10 text-lg">
+                Join our waitlist today and get early access to our grant
+                application concierge service.
+              </p>
+              <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button
+                  class="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-opacity-95 transition-all shadow-lg"
+                >
+                  Register Interest
+                </button>
+                <button
+                  class="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all"
+                >
+                  Book a Consultation
+                </button>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer
+          class="border-t border-[#f3e9e7] dark:border-[#3d2a26] bg-[#fcf9f8] dark:bg-[#221310] py-12"
+        >
+          <div class="max-w-[1200px] mx-auto px-10">
+            <div
+              class="flex flex-col md:flex-row justify-between items-center gap-8"
+            >
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-3xl text-primary"
+                  >temple_hindu</span
+                >
+                <span class="text-xl font-bold dark:text-white"
+                  >HeritageCare</span
+                >
+              </div>
+              <div
+                class="flex flex-wrap justify-center gap-8 opacity-60 grayscale brightness-50 dark:brightness-100"
+              >
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined">verified_user</span>
+                  <span class="text-sm font-semibold">Ofsted Registered</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined">security</span>
+                  <span class="text-sm font-semibold">DBS Checked</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined">favorite</span>
+                  <span class="text-sm font-semibold">Quality Care Award</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-12 text-center text-sm text-[#9a594c] dark:text-gray-500"
+            >
+              © 2024 HeritageCare. All rights reserved.
+              <span class="mx-2">|</span>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Privacy</a
+              >
+              <span class="mx-2">|</span>
+              <a class="hover:text-primary transition-colors" href="#">Terms</a>
+              <span class="mx-2">|</span>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Accessibility</a
+              >
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script>
+    (function () {
+      // --- Constants from GOV.UK ---
+      // UC childcare caps per assessment period (monthly)
+      const UC_CAPS = {
+        one: 1031.88,
+        twoPlus: 1768.94,
+      };
+
+      // Student Finance Childcare Grant caps per week (2025-2026)
+      const SFE_WEEKLY_CAPS = {
+        one: 199.62,
+        twoPlus: 342.24,
+      };
+
+      // Averages for conversion (weeks -> month)
+      const WEEKS_PER_MONTH = 4.3333333333;
+
+      // Default hourly rates (editable assumptions)
+      const DEFAULT_RATES = {
+        childminder: 12, // placeholder default - adjust to your market
+        nanny: 18, // placeholder default - adjust to your market
+      };
+
+      // Elements
+      const el = (id) => document.getElementById(id);
+
+      const childAge = el("childAge");
+      const employmentStatus = el("employmentStatus");
+      const numChildren = el("numChildren");
+      const careType = el("careType");
+      const hourlyRate = el("hourlyRate");
+      const hoursPerWeek = el("hoursPerWeek");
+      const termTimeOnly = el("termTimeOnly");
+      const calcBtn = el("calcBtn");
+
+      const results = el("results");
+      const summaryLine = el("summaryLine");
+      const notesLine = el("notesLine");
+      const marketCost = el("marketCost");
+      const marketDetail = el("marketDetail");
+      const supportAmount = el("supportAmount");
+      const supportDetail = el("supportDetail");
+      const oopAmount = el("oopAmount");
+      const oopDetail = el("oopDetail");
+      const freeHours = el("freeHours");
+      const supportHours = el("supportHours");
+      const paidHours = el("paidHours");
+
+      // Set default rate when switching care type
+      careType.addEventListener("change", () => {
+        const ct = careType.value;
+        const current = parseFloat(hourlyRate.value);
+        // Only auto-set if empty or equal to previous defaults (to avoid overwriting custom)
+        if (
+          !current ||
+          current === DEFAULT_RATES.childminder ||
+          current === DEFAULT_RATES.nanny
+        ) {
+          hourlyRate.value = DEFAULT_RATES[ct];
+        }
+      });
+
+      function pounds(n) {
+        return "£" + Math.max(0, n).toFixed(2);
+      }
+
+      function clamp(n, min, max) {
+        return Math.max(min, Math.min(max, n));
+      }
+
+      /**
+       * Estimate "potential free hours per week" (England-style assumptions):
+       * - Working parents: 30 hours/week for ages under2, age2, age3to5 (approx 9 months to 4 years; we map under2/2/3-5) over 38 weeks
+       * - Unemployed: 15 hours/week only for age2 (potentially, if on benefits & income threshold) and for age3to5 (universal for 3-4)
+       * - age5plus: 0 free hours
+       *
+       * NOTE: This is intentionally conservative and "potential" — real eligibility varies.
+       */
+      function estimateFreeHoursPerWeek(ageKey, statusKey) {
+        if (ageKey === "age5plus") return 0;
+
+        const working =
+          statusKey === "singleWorking" || statusKey === "bothWorking";
+        const student = statusKey === "fullTimeStudent";
+        const unemployed = statusKey === "unemployed";
+
+        // Working parents scheme (potential)
+        if (working) {
+          // Map under2, age2, age3to5 as potentially eligible for 30 hours (within 9m-4 framework)
+          if (ageKey === "under2" || ageKey === "age2" || ageKey === "age3to5")
+            return 30;
+        }
+
+        // Students: free-hours might still apply if working criteria met; we don't assume it by default.
+        if (student) {
+          // If child is 3-5 (includes 3-4), universal 15 hours might apply
+          if (ageKey === "age3to5") return 15;
+          // Some 2-year-olds get 15 hours with extra support, but we won't assume automatically
+          return 0;
+        }
+
+        // Unemployed / extra support
+        if (unemployed) {
+          if (ageKey === "age3to5") return 15; // universal 3-4
+          if (ageKey === "age2") return 15; // potential if on UC and within income threshold
+          return 0;
+        }
+
+        return 0;
+      }
+
+      /**
+       * Determine main support scheme used for the estimate (not combining):
+       * - Full time student -> Student Finance Childcare Grant (potential)
+       * - Working single/both -> Universal Credit childcare element (potential)
+       * - Unemployed -> none (0), because UC childcare element generally requires work
+       */
+      function determineSupportScheme(statusKey) {
+        if (statusKey === "fullTimeStudent") return "SFE";
+        if (statusKey === "singleWorking" || statusKey === "bothWorking")
+          return "UC";
+        return "NONE";
+      }
+
+      function calculate() {
+        // Inputs
+        const ageKey = childAge.value;
+        const statusKey = employmentStatus.value;
+        const childrenKey = numChildren.value;
+        const rate = parseFloat(hourlyRate.value);
+        const hrs = parseFloat(hoursPerWeek.value);
+        const scheduleKey = termTimeOnly.value;
+
+        if (!rate || rate <= 0 || !hrs || hrs <= 0) {
+          results.classList.remove("hidden");
+          summaryLine.textContent =
+            "Please enter a valid hourly rate and hours per week.";
+          notesLine.textContent = "";
+          marketCost.textContent = "—";
+          supportAmount.textContent = "—";
+          oopAmount.textContent = "—";
+          freeHours.textContent = "—";
+          supportHours.textContent = "—";
+          paidHours.textContent = "—";
+          return;
+        }
+
+        // Children multiplier (for "2 or more", assume 2 children)
+        const childrenCount = childrenKey === "2plus" ? 2 : 1;
+
+        // Free hours/week estimate
+        const freeHrsPerWeek = estimateFreeHoursPerWeek(ageKey, statusKey);
+
+        // If free hours are term-time only, convert to monthly average
+        // term-time free hours: (freeHrsPerWeek * 38 weeks)/12 months => avg free hours per month
+        // year-round: assume free hours applied evenly each week (provider may stretch)
+        const freeHrsPerMonth =
+          scheduleKey === "term"
+            ? (freeHrsPerWeek * 38) / 12
+            : freeHrsPerWeek * WEEKS_PER_MONTH;
+
+        // Total hours needed per month
+        const totalHrsPerMonth = hrs * WEEKS_PER_MONTH;
+
+        // Free hours cannot exceed needed hours
+        const freeHrsAppliedPerMonth = clamp(
+          freeHrsPerMonth,
+          0,
+          totalHrsPerMonth,
+        );
+
+        // Market costs (gross)
+        const grossMonthlyCost = rate * totalHrsPerMonth * childrenCount;
+
+        // Cost after free-hours (we assume free hours offset at the same hourly rate)
+        const freeOffsetValue = rate * freeHrsAppliedPerMonth * childrenCount;
+        const netMonthlyCostAfterFree = Math.max(
+          0,
+          grossMonthlyCost - freeOffsetValue,
+        );
+
+        // Choose support scheme
+        const scheme = determineSupportScheme(statusKey);
+
+        let supportMonthly = 0;
+        let schemeLabel = "No grants assumed";
+        let schemeNote =
+          "Eligibility depends on your circumstances and scheme rules.";
+
+        if (scheme === "UC") {
+          schemeLabel = "Universal Credit childcare element (potential)";
+          // UC: up to 85% of eligible paid childcare costs, capped monthly
+          const cap = childrenKey === "2plus" ? UC_CAPS.twoPlus : UC_CAPS.one;
+          supportMonthly = Math.min(netMonthlyCostAfterFree * 0.85, cap);
+          schemeNote = `UC can refund up to 85% of childcare, capped at ${pounds(cap)}/month (assessment period).`;
+        } else if (scheme === "SFE") {
+          schemeLabel = "Student Finance Childcare Grant (potential)";
+          // Student grant: up to 85% capped weekly. Convert weekly cap to monthly.
+          const weeklyCap =
+            childrenKey === "2plus"
+              ? SFE_WEEKLY_CAPS.twoPlus
+              : SFE_WEEKLY_CAPS.one;
+          const monthlyCap = weeklyCap * WEEKS_PER_MONTH;
+          supportMonthly = Math.min(netMonthlyCostAfterFree * 0.85, monthlyCap);
+          schemeNote = `Student childcare grant can cover up to 85%, capped at ${pounds(weeklyCap)}/week (~${pounds(monthlyCap)}/month).`;
+        }
+
+        // Out of pocket
+        const outOfPocket = Math.max(
+          0,
+          netMonthlyCostAfterFree - supportMonthly,
+        );
+
+        // Hours equivalents
+        const supportHrsPerMonth = rate > 0 ? supportMonthly / rate : 0;
+        const paidHrsYouFund = rate > 0 ? outOfPocket / rate : 0;
+
+        // Build summary text
+        const ageText = childAge.options[childAge.selectedIndex].text;
+        const statusText =
+          employmentStatus.options[employmentStatus.selectedIndex].text;
+        const childText =
+          childrenKey === "2plus" ? "2 children (assumed)" : "1 child";
+
+        results.classList.remove("hidden");
+
+        summaryLine.textContent = `${ageText} • ${statusText} • ${childText} • ${hrs} hrs/week @ ${pounds(rate)}/hr`;
+
+        notesLine.textContent = `Includes potential free-hours estimate (${freeHrsPerWeek} hrs/week) and ${schemeLabel}. ${schemeNote}`;
+
+        marketCost.textContent = pounds(grossMonthlyCost);
+        marketDetail.textContent = `Gross monthly at market rates (≈ ${totalHrsPerMonth.toFixed(1)} hrs/month × ${childrenCount} child).`;
+
+        supportAmount.textContent = pounds(supportMonthly + freeOffsetValue);
+        supportDetail.textContent = `Total potential help = free-hours value ${pounds(freeOffsetValue)} + grant/benefit ${pounds(supportMonthly)}.`;
+
+        oopAmount.textContent = pounds(outOfPocket);
+        oopDetail.textContent = `After free-hours + estimated support (excludes provider extras like meals/trips).`;
+
+        freeHours.textContent = `${freeHrsPerWeek} hrs/week`;
+        supportHours.textContent = `${(supportHrsPerMonth * childrenCount).toFixed(1)} hrs/month (equivalent)`;
+        paidHours.textContent = `${(paidHrsYouFund * childrenCount).toFixed(1)} hrs/month`;
+
+        // Soft warnings for edge cases
+        const warnings = [];
+        if (scheme === "NONE") {
+          warnings.push(
+            "No UC/student support assumed for this employment status (you may still qualify in specific circumstances).",
+          );
+        }
+        if (ageKey === "age5plus") {
+          warnings.push(
+            "Free-hours typically do not apply for school-age children; after-school/club funding differs.",
+          );
+        }
+        if (childrenKey === "2plus") {
+          warnings.push(
+            "Costs assumed for 2 children; if you have 3+, adjust the multiplier in the script.",
+          );
+        }
+        if (warnings.length) {
+          notesLine.textContent += " " + warnings.join(" ");
+        }
+      }
+
+      calcBtn.addEventListener("click", calculate);
+
+      // Optional: auto-calc on change
+      [
+        childAge,
+        employmentStatus,
+        numChildren,
+        careType,
+        hourlyRate,
+        hoursPerWeek,
+        termTimeOnly,
+      ].forEach((x) =>
+        x.addEventListener("change", () => {
+          if (!results.classList.contains("hidden")) calculate();
+        }),
+      );
+
+      // Set initial default rate by care type
+      hourlyRate.value = DEFAULT_RATES[careType.value] || hourlyRate.value;
+    })();
+  </script>
+</html>
